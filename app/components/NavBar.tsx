@@ -1,10 +1,3 @@
-
-
-
-
-
-// app/components/NavBar.tsx
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -49,8 +42,8 @@ export default function NavBar(): JSX.Element {
           <Link href="/profile" style={{ textDecoration: "none", color: "white" }}>
             <Button color="inherit">Profile</Button>
           </Link>
-          <SignInButton disabled={!!user} /> {/* Disable when logged in */}
-          <SignOutButton handleSignOut={handleSignOut} disabled={!user} /> {/* Disable when logged out */}
+          <SignInButton disabled={!!user} />
+          <SignOutButton handleSignOut={handleSignOut} disabled={!user} />
         </Box>
       </Toolbar>
     </AppBar>

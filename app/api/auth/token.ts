@@ -1,10 +1,3 @@
-
-
-
-
-
-// app/api/auth/token.ts
-
 import { MongoClient } from "mongodb";
 import { NextResponse } from "next/server";
 
@@ -18,7 +11,6 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Authorization code missing" }, { status: 400 });
     }
 
-    // Exchange the code for an access token
     const tokenResponse = await fetch("https://github.com/login/oauth/access_token", {
       method: "POST",
       headers: { Accept: "application/json" },
@@ -35,14 +27,12 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Failed to fetch access token" }, { status: 400 });
     }
 
-    // Fetch user profile
     const userResponse = await fetch("https://api.github.com/user", {
       headers: { Authorization: `Bearer ${tokenData.access_token}` },
     });
 
     const user = await userResponse.json();
 
-    // Save the user to MongoDB
     await client.connect();
     const db = client.db("oauth-app");
     const usersCollection = db.collection("users");

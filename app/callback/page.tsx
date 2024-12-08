@@ -1,10 +1,3 @@
-
-
-
-
-
-// app/callback.tsx
-
 "use client";
 
 import { useEffect } from "react";
@@ -23,7 +16,6 @@ export default function Callback(): JSX.Element {
       if (!code || !returnedState || returnedState !== savedState) {
         console.error("Invalid state or missing code.");
         router.push("/"); // Redirect to home page
-        return;
       }
 
       localStorage.removeItem("oauth_state");
@@ -37,7 +29,7 @@ export default function Callback(): JSX.Element {
 
         if (response.ok) {
           const { githubId } = await response.json();
-          router.push(`/profile?githubId=${githubId}`); // Redirect to profile
+          router.push(`/profile?githubId=${githubId}`);
         } else {
           console.error("Failed to exchange token.");
           router.push("/");

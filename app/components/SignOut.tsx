@@ -1,10 +1,3 @@
-
-
-
-
-
-// app/components/SignOut.tsx
-
 import { Button } from "@mui/material";
 
 interface SignOutButtonProps {
@@ -22,7 +15,7 @@ export default function SignOutButton({ handleSignOut, disabled }: SignOutButton
     <Button
       color="inherit"
       onClick={signOut}
-      disabled={disabled} // Disable when logged out
+      disabled={disabled}
     >
       Sign Out
     </Button>

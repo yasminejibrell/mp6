@@ -1,10 +1,3 @@
-
-
-
-
-
-// app/api/get-user/route.ts
-
 import { MongoClient } from "mongodb";
 import { NextResponse } from "next/server";
 

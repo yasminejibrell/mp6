@@ -1,10 +1,3 @@
-
-
-
-
-
-// app/components/SignIn.tsx
-
 "use client";
 
 import { Button } from "@mui/material";
@@ -32,7 +25,7 @@ export default function SignInButton({ disabled }: SignInButtonProps): JSX.Eleme
     <Button
       color="inherit"
       onClick={handleSignIn}
-      disabled={disabled} // Disable when logged in
+      disabled={disabled}
     >
       Sign In
     </Button>

@@ -1,7 +1,7 @@
 "use client"; 
 
 import { useEffect, useState } from "react";
-import { Button, Box, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import SignInButton from "./components/SignIn";
 import SignOutButton from "./components/SignOut";
 
